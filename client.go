@@ -1,11 +1,21 @@
 package main
 
 import (
+	"flag"
 	"fmt"
+	"log"
 	"net"
+	"os"
 )
 
 func main() {
+	fname := flag.String("filename", "file.aac", "path of the audio file")
+	flag.Parse()
+
+	file, err := os.Open(*fname)
+	if err != nil {
+		log.Fatal(err)
+	}
 	server()
 }
 
