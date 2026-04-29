@@ -25,9 +25,7 @@ func main() {
 		}
 
 		// 3. Handle client in new goroutine
-		go handleClient(conn)
-	}
-}
+zxjkchgo handleClient(conn)
 
 func handleClient(conn net.Conn) {
 	defer conn.Close()
