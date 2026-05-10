@@ -15,7 +15,6 @@ func main() {
 	defer listener.Close()
 
 	fmt.Println("Server is listening on port 8080...")
-
 	for {
 		// 2. Wait for client
 		conn, err := listener.Accept()
@@ -25,7 +24,9 @@ func main() {
 		}
 
 		// 3. Handle client in new goroutine
-zxjkchgo handleClient(conn)
+		handleClient(conn)
+	}
+}
 
 func handleClient(conn net.Conn) {
 	defer conn.Close()
