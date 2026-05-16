@@ -24,7 +24,8 @@ func main() {
 		}
 
 		// 3. Handle client in new goroutine
-		handleClient(conn)
+		go handleClient(conn)
+
 	}
 }
 
